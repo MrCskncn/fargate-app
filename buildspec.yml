@@ -9,7 +9,7 @@ phases:
       - echo $CODEBUILD_WEBHOOK_EVENT
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $REGION)
-      - REPOSITORY_URI=365058442801.dkr.ecr.us-east-1.amazonaws.com/limon-api
+      - REPOSITORY_URI=365058442801.dkr.ecr.us-east-1.amazonaws.com/serverlessvecloud
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - NEW_IMAGE=$REPOSITORY_URI:$IMAGE_TAG
